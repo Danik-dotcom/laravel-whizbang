@@ -1,0 +1,58 @@
+{
+    "name": "ludovicguenet/whizbang",
+    "description": "Whizbang — Automatic database schema change tracking, risk analysis, and instant rollback for Laravel.",
+    "type": "library",
+    "keywords": ["laravel", "migration", "database", "schema", "rollback", "tracking"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "ludoguenet",
+            "email": "ludovicguenet@gmx.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/database": "^10.0|^11.0|^12.0",
+        "illuminate/console": "^10.0|^11.0|^12.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0",
+        "pestphp/pest": "^2.34",
+        "pestphp/pest-plugin-laravel": "^2.4",
+        "laravel/pint": "^1.16",
+        "phpstan/phpstan": "^1.11",
+        "nunomaduro/larastan": "^2.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ludovicguenet\\Whizbang\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ludovicguenet\\Whizbang\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ludovicguenet\\Whizbang\\WhizbangServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "format": "vendor/bin/pint",
+        "analyse": "vendor/bin/phpstan analyse --memory-limit=1G",
+        "qa": "vendor/bin/phpstan analyse --memory-limit=1G && vendor/bin/pest"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "version": "dev-main"
+}
